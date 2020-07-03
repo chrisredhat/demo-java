@@ -1,6 +1,6 @@
 FROM ibmcom/websphere-liberty:latest
 
-RUN pwd
+RUN git clone https://github.com/chrisredhat/demo-java
 RUN ls
-RUN bin/build
-COPY --chown=1001:0 pkg/demo.war /config/dropins/
+RUN demo-app/bin/build
+COPY --chown=1001:0 demo-app/pkg/demo.war /config/dropins/
